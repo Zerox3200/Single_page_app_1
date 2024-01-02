@@ -1,0 +1,181 @@
+@use './../../helpers/functions' as *;
+
+.Main_Portfolio {
+    min-height: max-content;
+    display: flex;
+    flex-direction: column;
+
+    @include Breakpoints(small) {
+        margin-top: 20px;
+    }
+
+    @include Breakpoints(mobile) {
+        margin-top: 20px;
+    }
+
+    .Portfolio_filter {
+        width: 100%;
+
+        .Filter_Titlies {
+            width: 100%;
+            height: 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 50px;
+
+            @include Breakpoints(mobile) {
+                column-gap: 10px;
+            }
+
+            span {
+                padding: 5px 15px;
+                @include Animtation(0.2s, linear, all);
+                border-radius: 15px;
+                cursor: pointer;
+
+                &:hover,
+                &.Active {
+                    background-color: $BaseColor;
+                    color: white;
+                }
+            }
+        }
+
+        .Gallary {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            row-gap: 15px;
+
+            .Porfolio {
+                width: 32%;
+                height: 500px;
+                position: relative;
+                overflow: hidden;
+
+                &:hover {
+                    .Portfolio_Description {
+                        bottom: 0%;
+                    }
+                }
+
+                .Portfolio_Description {
+                    position: absolute;
+                    left: 0;
+                    bottom: -100%;
+                    border: solid white 1px;
+                    width: 100%;
+                    height: 70px;
+                    background-color: white;
+                    opacity: 0.8;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0 10px;
+                    @include Animtation(0.3s, ease, all);
+
+                    svg {
+                        @include Animtation(0.5s, linear, all);
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $BaseColor;
+                        }
+                    }
+
+                    .Portfolio_Description_title {
+                        padding-top: 5px;
+
+                        p {
+                            font-size: 15px;
+                            margin: 0;
+
+                            @include Breakpoints(mobile) {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+
+                    .Portfolio_Description_ZoomDetails {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        column-gap: 10px;
+                    }
+                }
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                @include Breakpoints(small) {
+                    width: 49%;
+                }
+
+                @include Breakpoints(mobile) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.Sweet {
+    width: max-content;
+    height: max-content;
+
+    @include Breakpoints(mobile) {
+        width: 100%;
+    }
+
+    .Porfolio {
+        width: 100%;
+        height: 700px;
+        position: relative;
+        overflow: hidden;
+
+        .Portfolio_Description {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            border: solid white 1px;
+            width: 100%;
+            height: 70px;
+            background-color: white;
+            opacity: 0.8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+            @include Animtation(0.3s, ease, all);
+
+            .Portfolio_Description_title {
+                text-align: left;
+                padding-top: 5px;
+
+                p {
+                    font-size: 15px;
+                    margin: 0;
+
+                    @include Breakpoints(mobile) {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        @include Breakpoints(small) {}
+
+        @include Breakpoints(mobile) {}
+    }
+}

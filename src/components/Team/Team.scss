@@ -1,0 +1,22 @@
+@use './../../helpers/functions' as *;
+
+.Team {
+    height: max-content;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    flex-direction: column;
+    row-gap: 60px;
+
+    .Team_Members {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 20px;
+
+        @include Breakpoints(mobile) {
+            justify-content: center;
+        }
+    }
+}

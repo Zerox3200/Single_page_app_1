@@ -1,0 +1,160 @@
+@use './../../helpers/functions' as *;
+
+.Offers {
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 30px;
+    margin-top: 50px;
+
+    @include Breakpoints(medium) {
+        height: max-content;
+    }
+
+    @include Breakpoints(small) {
+        height: max-content;
+    }
+
+    @include Breakpoints(mobile) {
+        height: max-content;
+    }
+
+    .Main_Offer_Cards {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include Breakpoints(medium) {
+            flex-wrap: wrap;
+            row-gap: 20px;
+        }
+
+        @include Breakpoints(small) {
+            flex-wrap: wrap;
+            row-gap: 20px;
+        }
+
+        @include Breakpoints(mobile) {
+            flex-wrap: wrap;
+            row-gap: 20px;
+        }
+
+        .Offers_cards {
+            border: solid white 1px;
+            background-color: white;
+            border-radius: 20px;
+            height: 700px;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+
+            @include Breakpoints(medium) {
+                width: 100%;
+            }
+
+            @include Breakpoints(small) {
+                width: 100%;
+            }
+
+            @include Breakpoints(mobile) {
+                width: 100%;
+            }
+
+            &.biggest {
+                height: 800px;
+                width: 35%;
+                border: $BaseColor solid 5px;
+
+                @include Breakpoints(medium) {
+                    width: 100%;
+                }
+
+                @include Breakpoints(small) {
+                    width: 100%;
+                }
+
+                @include Breakpoints(mobile) {
+                    width: 100%;
+                }
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                row-gap: 15px;
+                font-size: 20px;
+
+                @include Breakpoints(small) {
+                    width: 100%;
+                    font-size: 25px;
+                }
+
+                @include Breakpoints(mobile) {
+                    width: 100%;
+                    font-size: 16px;
+                }
+
+                svg {
+                    color: green;
+                }
+            }
+
+            h4 {
+                font-weight: 900;
+                color: rgba(black, 0.8);
+                letter-spacing: 1px;
+            }
+
+            >svg {
+                border: solid #f7cdcc 9px;
+                outline: solid #fcedec 9px;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                padding: 13px;
+                background-color: #d7534c;
+                color: white;
+            }
+
+            p {
+                font-size: 23px;
+                color: rgba(black, 0.7);
+                position: relative;
+                height: max-content;
+
+                &::before {
+                    content: '$';
+                    position: absolute;
+                    left: -15%;
+                    top: 6px;
+                    font-size: 30px;
+                    font-weight: bolder;
+                    color: $BaseColor;
+                }
+
+                span {
+                    color: $BaseColor;
+                    font-weight: bold;
+                    font-size: 50px;
+                }
+            }
+
+            button {
+                @include Button();
+
+                padding: {
+                    left: 40px;
+                    right: 40px;
+                }
+            }
+        }
+    }
+
+}

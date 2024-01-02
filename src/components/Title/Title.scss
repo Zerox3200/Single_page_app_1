@@ -1,0 +1,28 @@
+@use './../../helpers/functions' as *;
+
+.Title {
+    text-align: center;
+
+    h1 {
+        position: relative;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 10px;
+
+        &::after {
+            content: "";
+            border: solid $BaseColor 1px;
+            width: 40px;
+            height: 0px;
+        }
+
+        &::before {
+            content: "";
+            border: solid $BaseColor 1px;
+            width: 40px;
+            height: 0px;
+        }
+    }
+}

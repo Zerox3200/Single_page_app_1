@@ -1,0 +1,13 @@
+.Counting {
+    font-size: 50px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+
+    span {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,193 @@
+@use './../../helpers/functions' as *;
+
+.Testimonials {
+    height: max-content;
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 50px;
+
+    @include Breakpoints(medium) {
+        flex-direction: column;
+    }
+
+    @include Breakpoints(small) {
+        flex-direction: column;
+    }
+
+    @include Breakpoints(mobile) {
+        flex-direction: column;
+    }
+
+    .Testimonials_pt1 {
+        width: 40%;
+
+        @include Breakpoints(medium) {
+            width: 100%;
+        }
+
+        @include Breakpoints(small) {
+            width: 100%;
+        }
+
+        @include Breakpoints(mobile) {
+            width: 100%;
+        }
+
+        h2 {
+            font-weight: bold;
+        }
+
+        p {
+            text-align: justify;
+        }
+    }
+
+    .Testimonials_pt2 {
+        width: 55%;
+        border: solid white 1px;
+        height: 350px;
+        background-color: white;
+        box-shadow: 0px 0px 20px #0000003d;
+
+        @include Breakpoints(medium) {
+            width: 100%;
+        }
+
+        @include Breakpoints(small) {
+            width: 100%;
+        }
+
+        @include Breakpoints(mobile) {
+            width: 100%;
+        }
+
+        .splide.is-initialized,
+        .splide.is-rendered {
+            height: 100%;
+            overflow: auto;
+
+            .splide__pagination__page:hover {
+                background-color: $BaseColor;
+            }
+
+            .splide__pagination__page.is-active {
+                background-color: $BaseColor;
+            }
+
+            @include Breakpoints(mobile) {
+                padding: 0px;
+                padding-top: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .splide__track {
+                height: 100%;
+            }
+
+            li {
+                height: 100%;
+
+                .Card {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-between;
+
+                    @include Breakpoints(medium) {
+                        justify-content: center;
+                    }
+
+                    @include Breakpoints(small) {
+                        justify-content: center;
+                    }
+
+                    @include Breakpoints(mobile) {
+                        justify-content: center;
+                        width: 100%;
+                        height: max-content;
+
+                        padding: {
+                            left: 4%;
+                            right: 4%;
+                            top: 6%;
+                            bottom: 1%;
+                        }
+                    }
+
+                    .Card_image {
+                        width: 50%;
+                        height: 120px;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        column-gap: 10px;
+
+                        @include Breakpoints(mobile) {
+                            width: 100%;
+                            height: max-content;
+                        }
+
+                        img {
+                            width: 100px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            border: solid whitesmoke 5px;
+
+                            @include Breakpoints(medium) {
+                                width: 120px;
+                            }
+
+                            @include Breakpoints(small) {
+                                width: 120px;
+                            }
+                        }
+
+                        .imagesDesc {
+                            h5 {
+                                font-weight: bolder;
+                                margin: 0;
+                            }
+
+                            span {
+                                opacity: 0.7;
+                            }
+
+                            .Stars {
+                                color: gold;
+                                display: flex;
+                                width: 100%;
+                                margin-top: 15px;
+
+                                svg {
+                                    font-size: 20px;
+                                }
+                            }
+
+                        }
+                    }
+
+                    .Card_paragraph {
+                        padding: 10px 20px;
+
+                        p {
+                            font-style: italic;
+                            color: rgba(black, 0.8);
+                        }
+
+                        @include Breakpoints(mobile) {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+    }
+}

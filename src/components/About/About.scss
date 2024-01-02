@@ -1,0 +1,50 @@
+@use './../../helpers/functions' as *;
+
+.About {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 0 20px;
+
+    @include Breakpoints(medium) {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    @include Breakpoints(small) {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    @include Breakpoints(mobile) {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: 700px;
+    }
+
+    img {
+        @include Animtation(0.2s, linear, all);
+        width: 150px;
+        filter: grayscale(100);
+        cursor: pointer;
+
+        @include Breakpoints(medium) {
+            width: 80px;
+        }
+
+        @include Breakpoints(small) {
+            width: 80px;
+        }
+
+        @include Breakpoints(mobile) {
+            width: 34%;
+        }
+
+        &:hover {
+            filter: none;
+            opacity: 1;
+        }
+    }
+}

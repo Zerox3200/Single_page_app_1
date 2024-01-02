@@ -1,0 +1,74 @@
+@use './../../helpers/functions' as*;
+
+.Features2 {
+    height: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 !important;
+
+
+    @include Breakpoints(small) {
+        flex-direction: column;
+    }
+
+    @include Breakpoints(mobile) {
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 40px;
+        margin-top: 20px;
+        height: 800px;
+        padding: 0 10px !important;
+    }
+
+    img {
+        height: 470px;
+        border: white 5px solid;
+        box-shadow: 0px 0px 12px #0000002b;
+
+        @include Breakpoints(medium) {
+            height: 350px;
+        }
+
+        @include Breakpoints(small) {
+            height: 400px;
+        }
+
+        @include Breakpoints(mobile) {
+            width: 100%;
+        }
+    }
+
+    .Features2_desc {
+        width: 40%;
+
+        @include Breakpoints(small) {
+            width: 100%;
+        }
+
+        @include Breakpoints(mobile) {
+            width: 100%;
+        }
+
+        h3 {
+            font-weight: bold;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            padding: 0;
+
+            svg {
+                color: $BaseColor;
+                font-size: 20px;
+            }
+        }
+
+        button {
+            @include Button();
+        }
+    }
+}

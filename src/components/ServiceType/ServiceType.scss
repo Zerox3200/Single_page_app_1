@@ -1,0 +1,103 @@
+@use './../../helpers/functions' as *;
+
+.ServiceType {
+    width: 49%;
+    height: 32%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    row-gap: 10px;
+    position: relative;
+
+    @include Breakpoints(small) {
+        width: 100%;
+    }
+
+    @include Breakpoints(mobile) {
+        width: 100%;
+        column-gap: 10px;
+    }
+
+    .ServiceTypeLine {
+        height: 1%;
+        display: flex;
+
+        >span {
+            border: solid $BaseColor 1px;
+            width: 4%;
+        }
+
+        span:nth-of-type(2) {
+            border: solid #00000057 1px;
+            width: 96%;
+        }
+    }
+
+    .ServiceType_desc {
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 40px;
+        position: relative;
+
+        .ServiceType_desc_icon {
+            height: 100%;
+            display: flex;
+            position: relative;
+
+            svg {
+                width: 70px;
+                height: 70px;
+                margin: auto;
+                position: relative;
+                opacity: 0.7;
+            }
+
+            &::before {
+                content: "";
+                border: solid transparent 1px;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                bottom: 46px;
+                right: -5px;
+                border-radius: 50%;
+                background-color: #d7534c63;
+            }
+        }
+
+
+        .ServiceType_desc2 {
+            height: 130px;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 20px;
+            row-gap: 10px;
+            position: relative;
+
+            @include Breakpoints(mobile) {
+                row-gap: 0;
+            }
+
+            p {
+                @include Breakpoints(mobile) {
+                    font-size: 14px;
+                }
+            }
+
+            h5 {
+                font-weight: 900;
+                cursor: pointer;
+                @include Animtation(0.2s, linear, all);
+
+                &:hover {
+                    color: $BaseColor;
+                }
+            }
+        }
+    }
+}
