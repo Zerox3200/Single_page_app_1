@@ -1,14 +1,12 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import './Question.scss';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useAnimate, motion } from "framer-motion";
 import { useInView } from 'react-intersection-observer'
 
 export function Question({ number, title, desc }) {
-    const [ref, InView] = useInView({
-        triggerOnce: true,
-        threshold: 0.2
-    })
+    const ref = useRef()
+    const InView = useInView(ref, { once: true });
     const [ShowQuestion, setShowQuestion] = useState(false);
     const [Show, animate] = useAnimate();
 
@@ -26,7 +24,7 @@ export function Question({ number, title, desc }) {
     }
     return (
         <motion.div className="Question" ref={ref}
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={InView && { opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'linear' }}
         >

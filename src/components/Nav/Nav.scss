@@ -38,7 +38,7 @@
 
     h4 {
         font-weight: 900;
-        flex: 3;
+        width: 22%;
 
         span {
             color: #df4d49;
@@ -80,7 +80,17 @@
         display: flex;
         justify-content: flex-end;
 
+        @include Breakpoints(medium) {
+            align-items: center;
+        }
 
+        @include Breakpoints(small) {
+            align-items: center;
+        }
+
+        @include Breakpoints(mobile) {
+            align-items: center;
+        }
 
         button {
             background-color: #df4d49;

@@ -47,12 +47,13 @@ export function Nav() {
                 </div>
                 <div className="right">
                     <button className='btn'>Get Started</button>
+                    <div className="sideNavButton" onClick={ShowSide} style={{ display: !Show ? 'none' : 'flex' }} ref={ShowButton}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
-                <div className="sideNavButton" onClick={ShowSide} style={{ display: !Show ? 'none' : 'flex' }} ref={ShowButton}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+
             </nav>
         </>
     )

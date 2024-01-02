@@ -1,24 +1,22 @@
 import './Features2.scss';
 import Feature2 from './../../img/features-light-3.jpg'
 import CheckIcon from '@mui/icons-material/Check';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 export function Features2() {
-    const [ref, InView] = useInView({
-        triggerOnce: true,
-        threshold: 0.2
-    });
+    const ref = useRef()
+    const InView = useInView(ref, { once: true });
     return (
         <div className="Features2 container">
-            <motion.img src={Feature2} alt="" initial={{ scale: 1.3, opacity: 0 }} ref={ref}
-                animate={InView && { scale: 1, opacity: 1 }}
+            <motion.img src={Feature2} alt="" initial={{ opacity: 0 }} ref={ref}
+                animate={InView && { opacity: 1 }}
                 transition={{
                     duration: 0.5,
                     ease: "easeInOut",
                 }} />
-            <motion.div className="Features2_desc" initial={{ x: 50, opacity: 0 }}
-                animate={InView && { x: 0, opacity: 1 }}
+            <motion.div className="Features2_desc" initial={{ opacity: 0 }}
+                animate={InView && { opacity: 1 }}
                 transition={{
                     duration: 0.5,
                     ease: "linear",
