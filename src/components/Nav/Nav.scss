@@ -51,10 +51,15 @@
         display: flex;
         justify-content: space-between;
 
+        .Active {
+            color: #e59694;
+        }
+
         a {
             text-decoration: none;
             color: white;
             @include Animtation(0.2s, linear, all);
+
 
             &:hover {
                 transform: scale(1.1);

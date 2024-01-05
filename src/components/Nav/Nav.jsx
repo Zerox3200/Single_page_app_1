@@ -2,7 +2,6 @@ import './Nav.scss';
 import Swal from 'sweetalert2';
 import { useRef, useState } from 'react';
 
-
 export function Nav() {
     const ShowButton = useRef();
     const [Show, setShow] = useState(true);
@@ -33,6 +32,7 @@ export function Nav() {
         setScroll(window.pageYOffset === 0 ? false : true)
         return () => window.onscroll = null;
     }
+
     return (
         <>
             <nav className={Scroll ? 'navBar Scrolled' : 'navBar'}>
