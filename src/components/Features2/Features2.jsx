@@ -8,9 +8,9 @@ export function Features2() {
     const ref = useRef()
     const InView = useInView(ref, { once: true });
     return (
-        <div className="Features2 container">
-            <motion.img src={Feature2} alt="" initial={{ opacity: 0 }} ref={ref}
-                animate={InView && { opacity: 1 }}
+        <div className="Features2 container" ref={ref}>
+            <motion.img src={Feature2} alt="" initial={{ opacity: 0, scale: 0 }}
+                animate={InView && { opacity: 1, scale: 1 }}
                 transition={{
                     duration: 0.5,
                     ease: "easeInOut",

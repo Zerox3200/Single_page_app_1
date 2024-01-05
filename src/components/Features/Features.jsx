@@ -12,8 +12,8 @@ export function Features() {
         <div className="Features container">
             <Title Title="Features" Desc='Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit' />
             <div className="Features_inside" ref={ref}>
-                <motion.div className="Features_inside_desc" initial={{ opacity: 0 }}
-                    animate={InView && { opacity: 1 }}
+                <motion.div className="Features_inside_desc" initial={{ opacity: 0, scale: 0 }}
+                    animate={InView && { opacity: 1, scale: 1 }}
                     transition={{
                         duration: 0.5,
                         ease: "linear",

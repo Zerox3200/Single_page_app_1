@@ -9,14 +9,14 @@ export function Posts() {
     const InView = useInView(ref, { once: true });
     let DelayTime = 0;
     return (
-        <div className="PoststMain">
-            <div className="Posts container">
+        <div className="PoststMain" >
+            <div className="Posts container" ref={ref}>
                 <Title Title='Recent Posts' Desc='Necessitatibus eius consequatur ex aliquid fuga eum quidem sint 
             consectetur velit'/>
                 <div className="Cards">
                     {PostsMuch.map((ele) => {
                         return (
-                            <motion.div className="card" ref={ref}
+                            <motion.div className="card"
                                 initial={{ opacity: 0, y: 50 }}
                                 animate={InView && { opacity: 1, y: 0 }}
                                 transition={{ duration: 0.3, ease: 'linear', delay: DelayTime = DelayTime + 0.2 }}>

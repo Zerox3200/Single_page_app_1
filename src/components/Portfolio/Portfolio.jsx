@@ -1,18 +1,15 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Title } from '../Title/Title';
 import images from './Images'
 import './Portfolio.scss';
-import { AnimatePresence, motion } from "framer-motion"
+import { AnimatePresence, motion, useInView } from "framer-motion"
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import DescriptionIcon from '@mui/icons-material/Description';
 import Swal from 'sweetalert2';
-import { useInView } from 'react-intersection-observer';
 
 export function Portfolio() {
-    const [ref, InView] = useInView({
-        triggerOnce: true,
-        threshold: 0.2
-    });
+    const ref = useRef();
+    const InView = useInView(ref, { once: true });
     const [ActiveAll, setActiveAll] = useState(true);
     const [ActiveApp, setActiveApp] = useState(false);
     const [ActiveCard, setActiveCard] = useState(false);
@@ -43,7 +40,7 @@ export function Portfolio() {
             <Title Title="Portfolio"
                 Desc="Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit"
             />
-            <div className="Portfolio_filter">
+            <div className="Portfolio_filter" ref={ref}>
                 <div className="Filter_Titlies">
                     <span className={ActiveAll && 'Active'}
                         onClick={() => {
@@ -78,12 +75,12 @@ export function Portfolio() {
                             ClickHandeler('Web');
                         }}>Web</span>
                 </div>
-                <div className="Gallary" ref={ref}>
+                <div className="Gallary" >
                     <AnimatePresence>
                         {DisplayGallary.map((ele) => {
                             return (
-                                <motion.div className="Porfolio" key={ele.id} initial={{ transform: "scale(0)" }}
-                                    animate={InView && { transform: "scale(1)" }}
+                                <motion.div className="Porfolio" key={ele.id} initial={{ opacity: 0, transform: "scale(0)" }}
+                                    animate={InView && { opacity: 1, transform: "scale(1)" }}
                                     exit={{ transform: "scale(0)" }}>
                                     <img src={ele.img} alt="Type" />
                                     <div className="Portfolio_Description">
