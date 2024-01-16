@@ -1,0 +1,26 @@
+@use './../../helpers/functions' as *;
+
+.Pointer {
+    position: fixed;
+    right: 20px;
+    bottom: 15px;
+    border: solid $BaseColor 1px;
+    padding: 8px;
+    background-color: $BaseColor;
+    border-radius: 5px;
+    cursor: pointer;
+    @include Animtation(0.3s, linear, all);
+    color: white;
+    z-index: 4;
+    opacity: 1;
+
+    &.hide {
+        opacity: 0;
+        cursor: none;
+        @include Animtation(0.3s, linear, all);
+    }
+
+    &:hover {
+        background-color: rgba($BaseColor, 0.8);
+    }
+}

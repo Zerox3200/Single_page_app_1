@@ -1,8 +1,10 @@
 import './Nav.scss';
 import Swal from 'sweetalert2';
 import { useRef, useState } from 'react';
-
+import { useDispatch } from 'react-redux';
+import { Hide, Showing } from '../../rtk/Slice';
 export function Nav() {
+    const dispatch = useDispatch();
     const ShowButton = useRef();
     const [Show, setShow] = useState(true);
     const ShowSide = () => {
@@ -29,7 +31,12 @@ export function Nav() {
     }
     const [Scroll, setScroll] = useState(false);
     window.onscroll = () => {
-        setScroll(window.pageYOffset === 0 ? false : true)
+        setScroll(window.pageYOffset === 0 ? false : true);
+        if (window.pageYOffset === 0) {
+            dispatch(Hide());
+        } else if (window.pageYOffset > 0) {
+            dispatch(Showing());
+        }
         return () => window.onscroll = null;
     }
 
@@ -46,7 +53,7 @@ export function Nav() {
                     <a href='#Contact'>Contact</a>
                 </div>
                 <div className="right">
-                    <button className='btn'>Get Started</button>
+                    <a className='btn NavButton' href='#About'>Get Started</a>
                     <div className="sideNavButton" onClick={ShowSide} style={{ display: !Show ? 'none' : 'flex' }} ref={ShowButton}>
                         <span></span>
                         <span></span>

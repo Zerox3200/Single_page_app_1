@@ -7,6 +7,7 @@ import Author3 from './blog/blog-author-3.jpg';
 
 export const PostsMuch = [
     {
+        id: 1,
         title: 'Politics',
         desc: 'Dolorum optio tempore voluptas dignissimos',
         name: 'Maria Doe',
@@ -15,6 +16,7 @@ export const PostsMuch = [
         PersonalPhoto: Author1
     },
     {
+        id: 2,
         title: 'sports',
         desc: 'Nisi magni odit consequatur autem nulla dolorem',
         name: 'Allisa Mayer',
@@ -22,6 +24,7 @@ export const PostsMuch = [
         CoverPhoto: Alisa,
         PersonalPhoto: Author2
     }, {
+        id: 3,
         title: 'Entertainment',
         desc: 'Possimus soluta ut id suscipit ea ut in quo quia et soluta',
         name: 'Mark Dower',

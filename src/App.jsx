@@ -2,6 +2,8 @@ import './App.scss';
 import { Home } from './pages/Home/Home';
 import { Loader } from './components/Loader/Loader';
 import { useEffect, useState } from 'react';
+import { Provider } from 'react-redux';
+import { store } from './rtk/Store';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -13,7 +15,9 @@ function App() {
 
   return (
     <>
-      {isLoading ? <Loader /> : <Home />}
+      <Provider store={store}>
+        {isLoading ? <Loader /> : <Home />}
+      </Provider>
     </>
   );
 }

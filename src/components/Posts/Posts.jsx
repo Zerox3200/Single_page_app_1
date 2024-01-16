@@ -16,12 +16,12 @@ export function Posts() {
                 <div className="Cards">
                     {PostsMuch.map((ele) => {
                         return (
-                            <motion.div className="card"
+                            <motion.div className="card" key={ele.id}
                                 initial={{ opacity: 0, y: 50 }}
                                 animate={InView && { opacity: 1, y: 0 }}
                                 transition={{ duration: 0.3, ease: 'linear', delay: DelayTime = DelayTime + 0.2 }}>
                                 <img src={ele.CoverPhoto} className="card-img-top" alt="..." />
-                                <div className="card-body">
+                                <div className="card-body" >
                                     <p className="card-title" style={{ opacity: '0.7' }}>{ele.title}</p>
                                     <p className="card-text">
                                         {ele.desc}

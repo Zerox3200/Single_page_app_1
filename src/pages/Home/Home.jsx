@@ -10,6 +10,7 @@ import { Frequently } from '../../components/Frequently/Frequently';
 import { Intro } from '../../components/Intro/Intro';
 import { Nav } from '../../components/Nav/Nav';
 import { Offers } from '../../components/Offers/Offers';
+import { Pointer } from '../../components/Pointer/Pointer';
 import { Portfolio } from '../../components/Portfolio/Portfolio';
 import { Posts } from '../../components/Posts/Posts';
 import { Service } from '../../components/Service/Service';
@@ -36,6 +37,7 @@ export function Home() {
             <Posts />
             <Contact />
             <Footer />
+            <Pointer />
         </>
     )
 }
